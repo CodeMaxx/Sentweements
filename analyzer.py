@@ -1,11 +1,11 @@
 import nltk
 
-class Analyzer():
+
+class Analyzer:
     """Implements sentiment analysis."""
 
-
-    positive_words = [] # Stores positive words
-    negative_words = [] # Store negative words
+    positive_words = []  # Stores positive words
+    negative_words = []  # Store negative words
 
     def __init__(self, positives="positive-words.txt", negatives="negative-words.txt"):
         """Initialize Analyzer."""
@@ -20,6 +20,7 @@ class Analyzer():
             if not li.startswith(";"):
                 Analyzer.negative_words.append(li)
 
+    # noinspection PyMethodMayBeStatic
     def analyze(self, text):
         """Analyze text for sentiment, returning its score."""
 
@@ -30,8 +31,8 @@ class Analyzer():
 
         for word in words:
             if word.lower() in Analyzer.positive_words:
-                score = score + 1
+                score += 1
             elif word.lower() in Analyzer.negative_words:
-                score = score - 1
+                score -= 1
 
         return score

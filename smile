@@ -5,6 +5,7 @@ import sys
 from analyzer import Analyzer
 from termcolor import colored
 
+
 def main():
 
     # ensure proper usage

@@ -1,10 +1,10 @@
 import html
 import os
 import plotly
-import socket
 
 from twython import Twython
 from twython import TwythonAuthError, TwythonError, TwythonRateLimitError
+
 
 def chart(positive, negative, neutral):
     """Return a pie chart for specified sentiments as HTML."""
@@ -34,6 +34,7 @@ def chart(positive, negative, neutral):
     }
     return plotly.offline.plot(figure, output_type="div", show_link=False, link_text=False)
 
+
 def get_user_timeline(screen_name, count=200):
     """Return list of most recent tweets posted by screen_name."""
 
@@ -58,7 +59,7 @@ def get_user_timeline(screen_name, count=200):
             return None
         tweets = twitter.get_user_timeline(screen_name=screen_name, count=count)
         return [html.unescape(tweet["text"].replace("\n", " ")) for tweet in tweets]
-    except TwythonAuthError as e:
+    except TwythonAuthError:
         raise RuntimeError("invalid API_KEY and/or API_SECRET") from None
     except TwythonRateLimitError:
         raise RuntimeError("you've hit a rate limit") from None

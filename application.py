@@ -15,7 +15,7 @@ def search():
         return render_template("search.html")
 
     # get screen_name's tweets
-    tweets = helpers.get_user_timeline(screen_name)
+    tweets = helpers.get_user_timeline(screen_name, 100)
 
     positive, negative, neutral = 0.0, 0.0, 0.0
 

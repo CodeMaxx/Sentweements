@@ -63,5 +63,6 @@ def get_user_timeline(screen_name, count=200):
         raise RuntimeError("invalid API_KEY and/or API_SECRET") from None
     except TwythonRateLimitError:
         raise RuntimeError("you've hit a rate limit") from None
-    except TwythonError:
+    except TwythonError as e:
+        print(e)
         return None

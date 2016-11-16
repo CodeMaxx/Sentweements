@@ -38,7 +38,7 @@ def search():
     # render results
     return render_template("search.html", chart=chart, screen_name=screen_name)
 
-# Run the app :)
+# Run the app
 if __name__ == '__main__':
   app.run(
         host="0.0.0.0",

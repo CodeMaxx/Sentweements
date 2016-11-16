@@ -17,8 +17,8 @@ def main():
 	# Get 50 most recent tweets
 	tweets = get_user_timeline(username, 50)
 
+	# Handle the case when no tweets are fetched.
 	if tweets is None:
-		print("No such user exists")
 		return
 
 	# instantiate analyzer
@@ -33,3 +33,6 @@ def main():
 			print(colored(tweet + " - " + str(score), color="red"))
 		else:
 			print(colored(tweet + " - " + str(score), color="yellow"))
+
+if __name__ == '__main__':
+	main()

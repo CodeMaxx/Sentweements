@@ -27,3 +27,5 @@ Register your application [here](https://apps.twitter.com/) to get an API_KEY an
   - Gives a downloadable pie-chart for the last 100 tweets by the user.
 
 #### Author - [Akash Trehan](https://codemaxx.github.io/)
+
+#### License - [MIT](https://codemaxx.mit-license.org/@2016)
